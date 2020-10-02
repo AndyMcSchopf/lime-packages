@@ -69,6 +69,7 @@ function _nodes_and_links()
   for _, iface in pairs(interfaces) do
     currneigh = iwinfo.nl80211.assoclist(iface)
     for mac, station in pairs(currneigh) do
+        -- TODO: discard long time no seen
         table.insert(links, string.lower(mac))
     end
   end
